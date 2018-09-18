@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Pastor in Indonesia facing imprisonment
+  description: Pray for Pastor in Indonesia facing imprisonment
+
+two:
+  title: Women is suffering from ill health
+  description: Pray for women who is needing healing
