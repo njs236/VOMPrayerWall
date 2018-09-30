@@ -1,3 +1,3 @@
 class Request < ApplicationRecord
-  validates :description, presence: true
+  validates :title, :description, presence: true
 end
