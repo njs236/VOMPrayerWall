@@ -10,6 +10,28 @@
   </head>
 
   <body>
-    <%= yield %>
+   <div id="content">
+	   <div id="login_logout">
+		   <% if @current_user %>
+		   Logged in as:
+		   <%= @current_user.name %>
+		   <em> <%= link_to "(Logout)", session_path, method: :delete %></em>
+		   <%else %>
+		   <em> Not Logged in. </em>
+		   <%= link_to 'Login', new_session_path %>
+		   <% end %>
+	   </div> 
+	   <h1>Readit</h1>
+	   <% unless flash[:notice].blank? %>
+	   <div id="notification"><%= flash[:notice]%></div>
+	   <% end %>
+	   <%= yield %>
+   </div>
+   <ul id="navigation">
+	   <li><%= link_to 'Home page',requests_path%></li>
+	   <li><%= link_to 'Submit new prayer request', new_request_path%></li>
+	   <li><%= link_to 'View calendar', calendar_index_path%></li>
+	  
+   </ul>
   </body>
 </html>

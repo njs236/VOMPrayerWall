@@ -1,0 +1,11 @@
+<%= form_for @request do |f| %>
+  <div>
+    <p><%= f.label :title %></p>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <p><%= f.label :description %></p>
+    <%= f.text_field :description %>
+  </div>
+  <%= submit_tag %>
+<% end %>
