@@ -1,0 +1,10 @@
+<%= form_tag users_path do %>
+  <p><%= @name %></p>
+  <p>
+    <p>
+    <%= text_field_tag :invitation %>
+  <%= submit_tag 'invite user' %></p>
+  
+<% end %>
+<%= render partial: 'invitation', collection: @invitations %> 
+

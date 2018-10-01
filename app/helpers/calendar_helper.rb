@@ -10,7 +10,6 @@ module CalendarHelper
     cnvdate2=getparse(enddate)
     getbegindate = Date.parse(cnvdate1)
     getenddate = Date.parse(cnvdate2)
-    
         return getbegindate - getenddate
   end
   
