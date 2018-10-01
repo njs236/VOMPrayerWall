@@ -11,7 +11,13 @@ class RequestsController < ApplicationController
   end
   
   def create
-    @story = @current_user.stories.build story_params
+    @request = @current_user.requests.build request_params
+    if @request.save
+      flash[:notice] = 'Prayer request submission succeeded'
+      redirect_to requests_path
+    else
+      render action:'new'
+    end
   end
   
   private

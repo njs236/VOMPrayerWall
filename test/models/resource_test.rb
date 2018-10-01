@@ -10,10 +10,14 @@ class ResourceTest < ActiveSupport::TestCase
     assert r.errors[:name].any?
     refute r.valid?
   end
-  
+  #found this to be the best way to handle attributes on resource in creating resources. 
   test "Resource contains valid attributes" do
-    r = Resource.create(name:"prayer_notes_NathanSinclair_1.doc")
-    assert r.valid?
+    resource = Resource.create(request: requests(:one),
+    user: users(:nathan),
+    name:"prayer_notes_NathanSinclair_1.doc")
+    assert resource.valid?
   end
+  
+
   
 end

@@ -2,6 +2,10 @@
 
 one:
   name: MyString
+  request: one
+  user: nathan
 
 two:
   name: MyString
+  request: one
+  user: john

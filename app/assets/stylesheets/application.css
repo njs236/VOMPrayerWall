@@ -22,6 +22,13 @@
 * html #content { /* added */
 	height:1%; /*added */
 } /*added*/
+
+#notification {
+  border: 5px solid #9c9;
+  background-color: #cfc;
+  padding: 5px;
+  margin: 10px 0;
+}
 #navigation {
 	list-style: none;
 	padding: 5px 0;
