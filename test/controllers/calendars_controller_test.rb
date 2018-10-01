@@ -12,5 +12,9 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'div', count: 3
   end
+  
+  
+  
+  
 
 end

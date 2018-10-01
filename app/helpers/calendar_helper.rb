@@ -1,6 +1,24 @@
+require 'time_diff'
+
 module CalendarHelper
   def calendar (date = Date.today, &block)
     Calendar.new(self, date, block).table
+  end
+  
+  def timeofdays(startdate, enddate) 
+    cnvdate1=getparse(startdate)
+    cnvdate2=getparse(enddate)
+    getbegindate = Date.parse(cnvdate1)
+    getenddate = Date.parse(cnvdate2)
+    
+        return getbegindate - getenddate
+  end
+  
+  def getparse(date)
+    Date::DATE_FORMATS[:day_month_year] = "%Y-%m-%d"
+    cnvdate1 = date.to_formatted_s(:day_month_year)
+    cnvdate1 = cnvdate1.to(9)
+    return cnvdate1
   end
   
   class Calendar < Struct.new(:view, :date, :callback)

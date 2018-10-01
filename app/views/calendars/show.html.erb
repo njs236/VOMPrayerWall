@@ -1,6 +1,12 @@
-<h1>Calendar</h1>
+<h1><%= @month %></h1>
 <div id="calendar">
 	<%= calendar do |date| %>
 	  <%= date.day%>
+	  <% @requests.each do |request| %>
+	    <% if (timeofdays(request[:created_at], date) == 0)%>
+		
+		  <%= request.title %>
+		<%end%>
+      <%end%>
     <%end%>
 </div>
