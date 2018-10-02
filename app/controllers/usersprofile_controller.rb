@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+class UsersprofileController < ApplicationController
   before_action :ensure_login, only: [:show, :index, :new, :create]
+  
   def show
   end
   
@@ -7,20 +8,19 @@ class UsersController < ApplicationController
     @name = @current_user.name
     
     @invitations = Invitation.where("`from`=? OR `to`=?", @current_user.email, @current_user.email)
+    @usergroup = @current_user.usergroup
   end
 
   def new
-    @invitation = Invitation.new
+   
   end
-
+  
   def create
-    @from = @current_user.email
-    @to = params[:invitation]
-    @token = @current_user.token
     @invitation = @current_user.invitations.new
-    @invitation.from = @from
-    @invitation.to = @to
-    @invitation.token = @token
+    @invitation.from = @current_user.id
+    #@invitation.to = @to
+    @invitation.email = params[:invitation]
+    @invitation.user_group = params[:user_group_id]
     
     if @invitation.save
       flash[:notice] = 'Invitation sent'
