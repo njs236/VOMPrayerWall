@@ -1,6 +1,6 @@
 require 'time_diff'
 
-module CalendarHelper
+module CalendarsHelper
   def calendar (date = Date.today, &block)
     Calendar.new(self, date, block).table
   end
@@ -16,6 +16,7 @@ module CalendarHelper
   def getparse(date)
     Date::DATE_FORMATS[:day_month_year] = "%Y-%m-%d"
     cnvdate1 = date.to_formatted_s(:day_month_year)
+    cnvdate1 = cnvdate.in_time_zone("Pacific/Auckland")
     cnvdate1 = cnvdate1.to(9)
     return cnvdate1
   end

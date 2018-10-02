@@ -1,7 +1,15 @@
 <div class='request'>
+	<p><%= lengthoftimeago(request.created_at)%></p>
 <p><%= request.user.name %></p>
-
-<p><%= request.description %></h3>
+<div></div>
+<div>
+<p><%= request.description %></p>
+</div>
+<div class="resources">
+   <li><%= icon('fas', "book-open", class:"fa-2x")%></li>
+   <li><%= icon('fas', "sticky-note", class:"fa-2x")%></li>
+   <li><%= icon('fas',  "calendar-alt", class:"fa-2x")%></li>
+</div>
 
 
 </div>

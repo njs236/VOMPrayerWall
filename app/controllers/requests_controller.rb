@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
   before_action :ensure_login, only: [:index, :new, :create]
   def index
-    #time = Time.diff(request.created_at, Time.now())
+    #@time = Time.diff(request.created_at, Time.now())
+    #condition statement about 
     #@diff = time[:day]
     @requests = Request.all
   end

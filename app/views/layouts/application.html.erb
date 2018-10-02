@@ -11,20 +11,33 @@
 
   <body>
    <div id="content">
-
+       <%= render partial: "shared/navbar" %>
 	   <h1>VOMPrayerWall</h1>
 	   <% unless flash[:notice].blank? %>
-	   <div id="notification"><%= flash[:notice]%></div>
-	   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+	   <div class="alert alert-info"><%= notice %></div>
+       <div class="alert alert-warning"><%= alert %></div>
 	   <% end %>
 	   
 	   <%= yield %>
    </div>
    <ul id="navigation">
-	   <li><%= link_to 'Home page',requests_path%></li>
-	   <li><%= link_to 'Submit new prayer request', new_request_path%></li>
-	   <li><%= link_to 'View calendar', calendars_show_path%></li>
+	   <li><%= link_to requests_path do%>
+	   <%= icon('fas', 'book-open', class:"fa-3x btn")%>
+	   <%end %>
+	   
+	   </li>
+	   <li><%= link_to new_request_path do %>
+	   <%= icon('fas', "sticky-note",class:"fa-3x btn")%>
+	   <%end %>
+	   
+	   </li>
+	   <li><%= link_to calendars_index_path do%>
+	   <%= icon('fas', "calendar-alt",class:"fa-3x btn")%>
+	   <%end%>
+	   </li>
+	   <li>
+		   <%= render partial:"shared/profile" %>
+	   </li>
 	  
    </ul>
   </body>
