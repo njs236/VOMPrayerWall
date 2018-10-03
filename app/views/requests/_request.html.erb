@@ -2,10 +2,13 @@
 <div class="requestheader">
 	<span><%= lengthoftimeago(request.created_at)%></span>
 	<span><%= request.user.name %></span>
-	<span><% if request.hasananswerfromuser(@current_user) then %>
-		<%= icon('fas', 'star', class:"fa-2x")%>
+	<span><% id = "_#{request.id}_star "%>
+		<% if request.hasananswerfromuser(@current_user) then %>
+		<%= icon('fas', 'star', html_options: {id:id, class:"fa-2x answer_on"})%>
 		<% else %>
-		<%= icon('far', 'star', class:"fa-2x")%>
+		<a href="#" onclick="add_answer(<%=request.id%>)">
+		<%= icon('far', 'star', id:id, class:"fa-2x answer_off")%>
+		</a>
 		<% end %>
 	</span>
 </div>

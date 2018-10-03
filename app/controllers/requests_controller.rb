@@ -11,6 +11,23 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
   
+  def createanswer
+    request = Request.find(params[:request_id])
+    answer = @request.answers.new
+    answer.request = params[:request_id]
+    answer.user = @current_user
+    answer.save
+    #check the prayer day for values
+    if (@current_user.prayerdays.where("user_id=?", @current_user.id).nil?)
+      day = @current_user.prayerdays.new
+      day.user = @current_user
+      day.save
+      streak = @current_user.streaks.new
+      streak.user = @current_user
+      streak.save
+    end
+  end
+  
   def create
     @request = @current_user.requests.build request_params
     if @request.save
