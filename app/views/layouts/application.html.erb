@@ -20,6 +20,7 @@
 	   
 	   <%= yield %>
    </div>
+   <% if (user_signed_in?)%>
    <ul id="navigation">
 	   <li><%= link_to requests_path do%>
 	   <%= icon('fas', 'book-open', class:"fa-3x btn")%>
@@ -38,7 +39,7 @@
 	   <li>
 		   <%= render partial:"shared/profile" %>
 	   </li>
-	  
+	<% end %>
    </ul>
   </body>
 </html>

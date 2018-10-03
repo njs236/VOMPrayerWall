@@ -15,8 +15,8 @@ module CalendarsHelper
   
   def getparse(date)
     Date::DATE_FORMATS[:day_month_year] = "%Y-%m-%d"
-    cnvdate1 = date.to_formatted_s(:day_month_year)
-    cnvdate1 = cnvdate.in_time_zone("Pacific/Auckland")
+    time_zone_date = date.in_time_zone("Pacific/Auckland")
+    cnvdate1 = time_zone_date.to_formatted_s(:day_month_year)
     cnvdate1 = cnvdate1.to(9)
     return cnvdate1
   end

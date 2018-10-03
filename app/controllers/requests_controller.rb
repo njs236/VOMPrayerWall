@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
     #@time = Time.diff(request.created_at, Time.now())
     #condition statement about 
     #@diff = time[:day]
-    @requests = Request.all
+    @requests = Request.order('created_at desc')
   end
   
   def new 
