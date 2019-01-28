@@ -8,15 +8,12 @@ gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2'
-gem "rack", ">= 2.0.6"
 gem 'devise', '~> 4.2'
-gem "loofah", ">= 2.2.3"
 gem 'time_diff'
-<<<<<<< HEAD
-gem 'sprockets-rails', '~> 3.1', '>= 3.1.1'
-=======
 gem "nokogiri", ">= 1.8.5"
->>>>>>> 7effdf8c64dcbc2d19c6b662908c6b35e04cb3db
+gem "rack", ">= 2.0.6"
+gem "loofah",  ">= 2.2.3"
+gem 'sprockets-rails', '~> 3.1', '>= 3.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5'
 gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-sass', '~> 5.3.1'
