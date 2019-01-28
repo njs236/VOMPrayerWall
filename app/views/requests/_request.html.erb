@@ -3,7 +3,7 @@
 	<span><%= lengthoftimeago(request.created_at)%></span>
 	<span><%= request.user.name %></span>
 	<span><% id = "_#{request.id}_star "%>
-		<% if request.hasananswerfromuser(@current_user) then %>
+		<% if request.answer then %>
 		<%= icon('fas', 'star', html_options: {id:id, class:"fa-2x answer_on"})%>
 		<% else %>
 		<a href="#" onclick="add_answer(<%=request.id%>)">

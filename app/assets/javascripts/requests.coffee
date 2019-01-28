@@ -11,13 +11,15 @@ _ ///
 
 @add_answer= (request_id) ->
   mydata = {
-    id : request_id
+	  
+    request_id : request_id
   }
-  #Rails.ajax({
-  #  type: "POST", 
-  #  url: "/requests/createanswer",
-  #  data: mydata,
-  #  success: function(repsonse){...},
-  #  error: function(repsonse){...}
-  #})
+  $.ajax '/requests/createanswer',
+    type: "POST"
+    data: mydata
+   success: (response) ->
+	   console.log "successful ajax call"
+    error: (response)->
+		console.log "error in ajax call"
+
   console.log mydata.id

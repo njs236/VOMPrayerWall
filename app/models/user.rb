@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :requests
   has_many :resources
   has_many :subscribers
+  has_many :prayer_days
   has_one :usergroup
   has_many :invitations, :class_name => "Invitation", :foreign_key => "to"
   has_many :sent_invitations, :class_name => "Invitation", :foreign_key => "from" 
